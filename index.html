@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="jsq">
+    <div id="hea"></div>
+    <div id="watch">
+        <input type="text" id="view">
+    </div>
+    <div id="bt">
+        <ul class="allbt">
+            <li class="bt0" onclick="reset()">C</li>
+            <li class="bt0" onclick="tuige()">&gt;</li>
+            <li class="bt0" onclick="bt('%')">%</li>
+            <li class="bt2" onclick="bt('/')">&divide;</li>
+            <li class="bt1" onclick="bt('7')">7</li>
+            <li class="bt1" onclick="bt('8')">8</li>
+            <li class="bt1" onclick="bt('9')">9</li>
+            <li class="bt2" onclick="bt('*')">&times;</li>
+            <li class="bt1" onclick="bt('4')">4</li>
+            <li class="bt1" onclick="bt('5')">5</li>
+            <li class="bt1" onclick="bt('6')">6</li>
+            <li class="bt2" onclick="bt('-')">-</li>
+            <li class="bt1" onclick="bt('1')">1</li>
+            <li class="bt1" onclick="bt('2')">2</li>
+            <li class="bt1" onclick="bt('3')">3</li>
+            <li class="bt2" onclick="bt('+')">+</li>
+            <li class="bt1" onclick="bt('0')">0</li>
+            <li class="bt1" onclick="bt('.')">.</li>
+            <li class="bt3" onclick="eq()">=</li>
+        </ul>
+    </div>
+    </div>
+
+
+    <script>
+        function bt(count){
+            var out=document.getElementById('view').value;
+            document.getElementById('view').value += count;
+        }
+
+        function eq(){
+            var out=document.getElementById('view').value;
+            if(out!=""){
+                var jieguo=eval(out);
+                document.getElementById('view').value=jieguo;                
+            }
+
+        }
+
+        function tuige(){
+            var out=document.getElementById('view');
+            out.value=out.value.substring(0,out.value.length-1);
+        }
+
+        function reset(){
+            document.getElementById('view').value="";
+        }
+    </script>
+
+
+
+</body>
+</html>
